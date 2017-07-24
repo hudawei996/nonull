@@ -6,13 +6,11 @@ import java.util.Map;
 
 /**
  * Reflects each field of the object，if the field is null，
- * assigns the unique value corresponding to the type of
- * the field to the field. This value is actually an instance
- * of the type of the field,and this value is provided by {@link God#innerCreate(Class)}
- * <p>
- * <p>
- * <p>
- * <p>
+ * then assign a unique value for that type to the field.
+ * This value is actually an instance of the type of the
+ * field,and this value is provided by {@link God#innerCreate(Class)}
+ * if a field has a {@link Keep} annotation then does not handle all
+ * the fields of the object.
  * <p>
  * Created by wanjian on 2017/7/23.
  */

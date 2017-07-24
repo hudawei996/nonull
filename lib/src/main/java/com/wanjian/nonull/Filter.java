@@ -78,8 +78,8 @@ public class Filter {
     }
 
     /**
-     * Basic type is not processed
-     * Do not deal with {@link Keep} annotated
+     * Basic type is not processed and
+     * do not deal with {@link Keep} annotated
      *
      * @param field
      * @return
