@@ -17,14 +17,8 @@ import java.util.Map;
 import static com.wanjian.nonull.NoNull.$;
 import static com.wanjian.nonull.NoNull.$$;
 
-/**
- * Created by wanjian on 2017/7/23.
- */
-
 public class Test {
-
-
-    public static void main(String[] args) throws IllegalAccessException, InstantiationException {
+    public static void main(String[] args) {
         init();
 //        List<String> list = NoNull.$(null, List.class);
         Country country = $$(new Country(), Country.class);
@@ -42,12 +36,19 @@ public class Test {
         System.out.println($(city) ? city : "does not exist");
 
 
-        Map map=country.zhejiang.hangzhou.woman.map;
+        Map map = country.zhejiang.hangzhou.woman.map;
         System.out.println($(map) ? map : "does not exist");
 
 
-
         log(country);
+//        country.shandong.hangzhou.woman.birth
+        if (country != null
+                && country.zhejiang != null
+                && country.zhejiang.hangzhou != null
+                && country.zhejiang.hangzhou.woman != null
+                && country.zhejiang.hangzhou.woman.friends != null) {
+//            dealWith(country.zhejiang.hangzhou.woman.friends);
+        }
 
     }
 
@@ -203,9 +204,11 @@ public class Test {
         NoNull.init(new God() {
             @Override
             protected <T> Object create(Class<T> clz) {
+                // if does not hava a default Constructor，you should provide an instance
                 if (clz == Province.class) {
                     return new Province(-1);
                 }
+                // if field is abstract class ,you should provide an instance too
                 if (clz == List.class) {
                     return new ArrayList<>();
                 }
@@ -214,7 +217,7 @@ public class Test {
                 }
                 return super.create(clz);
             }
-        }, new Filter() {
+        }, new Filter() {// which classes should process by nonull
             @Override
             protected List<Class<?>> classes() {
                 return Arrays.asList(Country.class);
