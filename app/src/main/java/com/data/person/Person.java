@@ -26,6 +26,7 @@ public class Person {
     public LinkedList<String> toys;
     public Person[] brothers = new Person[0];
     public Long[] note = new Long[0];
+    public List[][][]multiDimensionalArray;
     public Map<String, String> map;
     public Country mCountry;
 

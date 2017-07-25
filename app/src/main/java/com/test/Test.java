@@ -24,6 +24,7 @@ public class Test {
         Country country = $$(new Country(), Country.class);
         System.out.println(country);
 
+
         Date birth = country.zhejiang.hangzhou.woman.birth;
         System.out.println($(birth) ? birth : "does not exist");
 
@@ -39,16 +40,9 @@ public class Test {
         Map map = country.zhejiang.hangzhou.woman.map;
         System.out.println($(map) ? map : "does not exist");
 
-
-        log(country);
-//        country.shandong.hangzhou.woman.birth
-        if (country != null
-                && country.zhejiang != null
-                && country.zhejiang.hangzhou != null
-                && country.zhejiang.hangzhou.woman != null
-                && country.zhejiang.hangzhou.woman.friends != null) {
-//            dealWith(country.zhejiang.hangzhou.woman.friends);
-        }
+        List[][][] list = country.zhejiang.hangzhou.woman.multiDimensionalArray;
+        System.out.println("exist? " + $(list) + "  " + list.toString());
+         log(country);
 
     }
 
