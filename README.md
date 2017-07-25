@@ -252,7 +252,7 @@ import static com.wanjian.nonull.NoNull.$$;
 public class Test {
     public static void main(String[] args) {
         init();
-//        List<String> list = NoNull.$(null, List.class);
+//        List<String> list = NoNull.$$(null, List.class);
         Country country = $$(new Country(), Country.class);
         System.out.println(country);
 
